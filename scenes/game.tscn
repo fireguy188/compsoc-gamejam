@@ -1,7 +1,205 @@
-[gd_scene load_steps=2 format=3 uid="uid://20w7n5h3jhnv"]
+[gd_scene load_steps=4 format=3 uid="uid://20w7n5h3jhnv"]
 
-[ext_resource type="PackedScene" uid="uid://b4cui02cxewd2" path="res://scenes/player.tscn" id="1_0t55d"]
+[ext_resource type="PackedScene" uid="uid://efvlo2kvxhur" path="res://scenes/player.tscn" id="1_0t55d"]
+[ext_resource type="PackedScene" uid="uid://i2hkfjju75mr" path="res://tiles/corner wall.tscn" id="2_kjipb"]
+[ext_resource type="PackedScene" path="res://tiles/regular wall.tscn" id="3_vkxy4"]
 
 [node name="game" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_0t55d")]
+[node name="Border" type="CanvasGroup" parent="."]
+scale = Vector2(1, 1.013)
+
+[node name="corner wall" parent="Border" instance=ExtResource("2_kjipb")]
+position = Vector2(32, 608)
+
+[node name="corner wall2" parent="Border" instance=ExtResource("2_kjipb")]
+position = Vector2(32, 32)
+rotation = 1.5708
+
+[node name="corner wall3" parent="Border" instance=ExtResource("2_kjipb")]
+position = Vector2(1120, 32)
+rotation = 3.14159
+
+[node name="corner wall4" parent="Border" instance=ExtResource("2_kjipb")]
+position = Vector2(1120, 608)
+rotation = -1.5708
+
+[node name="regular wall" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 96)
+
+[node name="regular wall2" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 160)
+
+[node name="regular wall3" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 224)
+
+[node name="regular wall4" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 288)
+
+[node name="regular wall5" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 352)
+
+[node name="regular wall6" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 416)
+
+[node name="regular wall7" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 480)
+
+[node name="regular wall8" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(32, 544)
+
+[node name="regular wall9" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 96)
+
+[node name="regular wall10" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 160)
+
+[node name="regular wall11" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 224)
+
+[node name="regular wall12" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 288)
+
+[node name="regular wall13" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 352)
+
+[node name="regular wall14" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 416)
+
+[node name="regular wall15" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 480)
+
+[node name="regular wall16" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1144, 544)
+
+[node name="regular wall17" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(96, 32)
+rotation = 1.5708
+
+[node name="regular wall18" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(160, 32)
+rotation = 1.5708
+
+[node name="regular wall19" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(224, 32)
+rotation = 1.5708
+
+[node name="regular wall20" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(288, 32)
+rotation = 1.5708
+
+[node name="regular wall21" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(352, 32)
+rotation = 1.5708
+
+[node name="regular wall22" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(416, 32)
+rotation = 1.5708
+
+[node name="regular wall23" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(480, 32)
+rotation = 1.5708
+
+[node name="regular wall24" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(544, 32)
+rotation = 1.5708
+
+[node name="regular wall25" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(608, 32)
+rotation = 1.5708
+
+[node name="regular wall26" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(672, 32)
+rotation = 1.5708
+
+[node name="regular wall27" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(736, 32)
+rotation = 1.5708
+
+[node name="regular wall28" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(800, 32)
+rotation = 1.5708
+
+[node name="regular wall29" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(864, 32)
+rotation = 1.5708
+
+[node name="regular wall30" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(928, 32)
+rotation = 1.5708
+
+[node name="regular wall31" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(992, 32)
+rotation = 1.5708
+
+[node name="regular wall32" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1056, 32)
+rotation = 1.5708
+
+[node name="regular wall33" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(96, 632)
+rotation = 1.5708
+
+[node name="regular wall34" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(160, 632)
+rotation = 1.5708
+
+[node name="regular wall35" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(224, 632)
+rotation = 1.5708
+
+[node name="regular wall36" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(288, 632)
+rotation = 1.5708
+
+[node name="regular wall37" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(352, 632)
+rotation = 1.5708
+
+[node name="regular wall38" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(416, 632)
+rotation = 1.5708
+
+[node name="regular wall39" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(480, 632)
+rotation = 1.5708
+
+[node name="regular wall40" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(544, 632)
+rotation = 1.5708
+
+[node name="regular wall41" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(608, 632)
+rotation = 1.5708
+
+[node name="regular wall42" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(672, 632)
+rotation = 1.5708
+
+[node name="regular wall43" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(736, 632)
+rotation = 1.5708
+
+[node name="regular wall44" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(800, 632)
+rotation = 1.5708
+
+[node name="regular wall45" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(864, 632)
+rotation = 1.5708
+
+[node name="regular wall46" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(928, 632)
+rotation = 1.5708
+
+[node name="regular wall47" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(992, 632)
+rotation = 1.5708
+
+[node name="regular wall48" parent="Border" instance=ExtResource("3_vkxy4")]
+position = Vector2(1056, 632)
+rotation = 1.5708
+
+[node name="player" parent="." instance=ExtResource("1_0t55d")]
+position = Vector2(575, 342)
+scale = Vector2(0.3, 0.3)
