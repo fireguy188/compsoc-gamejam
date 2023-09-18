@@ -8,8 +8,9 @@
 [node name="game" type="Node2D"]
 
 [node name="Border" type="CanvasGroup" parent="."]
-position = Vector2(-43, -47)
-scale = Vector2(1.075, 1.157)
+process_mode = 4
+visible = false
+scale = Vector2(1, 1.013)
 
 [node name="corner wall" parent="Border" instance=ExtResource("2_kjipb")]
 position = Vector2(32, 608)
@@ -207,4 +208,5 @@ position = Vector2(575, 342)
 scale = Vector2(0.3, 0.3)
 
 [node name="laser cannon" parent="." instance=ExtResource("4_6vkqh")]
-position = Vector2(178, 253)
+position = Vector2(24, 103)
+scale = Vector2(0.3, 0.3)

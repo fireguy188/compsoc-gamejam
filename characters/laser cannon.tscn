@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0yhphli4irru"]
+
+[ext_resource type="Texture2D" uid="uid://bustyuttriago" path="res://images/laser cannon.svg" id="1_7bniu"]
+[ext_resource type="Script" path="res://scripts/laser cannon.gd" id="2_0neas"]
+[ext_resource type="Texture2D" uid="uid://dhq7d7u0hc7tj" path="res://images/laser.svg" id="3_3efic"]
+
+[node name="laser cannon" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7bniu")
+offset = Vector2(9.5, 0)
+script = ExtResource("2_0neas")
+
+[node name="laser" type="Sprite2D" parent="."]
+position = Vector2(1668, 0)
+scale = Vector2(40, 1)
+texture = ExtResource("3_3efic")
