@@ -1,16 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0yhphli4irru"]
+[gd_scene load_steps=6 format=3 uid="uid://c1bs80py3wckl"]
 
-[ext_resource type="Texture2D" uid="uid://bustyuttriago" path="res://images/laser cannon.svg" id="1_7bniu"]
-[ext_resource type="Script" path="res://scripts/laser cannon.gd" id="2_0neas"]
-[ext_resource type="Texture2D" uid="uid://dhq7d7u0hc7tj" path="res://images/laser.svg" id="3_3efic"]
+[ext_resource type="Texture2D" uid="uid://bustyuttriago" path="res://images/laser cannon.svg" id="1_cg3w6"]
+[ext_resource type="Script" path="res://scripts/laser cannon.gd" id="1_x8bic"]
+[ext_resource type="Texture2D" uid="uid://dhq7d7u0hc7tj" path="res://images/laser.svg" id="2_kfav1"]
+[ext_resource type="AudioStream" uid="uid://q6ikuf2q12ds" path="res://audio/laser.mp3" id="4_mvsww"]
 
-[node name="laser cannon" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eo3x"]
+size = Vector2(80, 28)
+
+[node name="laser cannon" type="Area2D"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7bniu")
-offset = Vector2(9.5, 0)
-script = ExtResource("2_0neas")
+monitoring = false
+monitorable = false
+script = ExtResource("1_x8bic")
 
-[node name="laser" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cg3w6")
+offset = Vector2(9, 0)
+
+[node name="laser" type="Area2D" parent="."]
+
+[node name="laser sprite" type="Sprite2D" parent="laser"]
 position = Vector2(1668, 0)
 scale = Vector2(40, 1)
-texture = ExtResource("3_3efic")
+texture = ExtResource("2_kfav1")
+
+[node name="collider" type="CollisionShape2D" parent="laser"]
+position = Vector2(1668, 0)
+scale = Vector2(40, 1)
+shape = SubResource("RectangleShape2D_1eo3x")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mvsww")
+pitch_scale = 1.85
+
+[connection signal="body_entered" from="laser" to="." method="_on_laser_body_entered"]

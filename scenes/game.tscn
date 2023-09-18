@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://efvlo2kvxhur" path="res://characters/player.tscn" id="1_0t55d"]
 [ext_resource type="PackedScene" uid="uid://i2hkfjju75mr" path="res://tiles/corner wall.tscn" id="2_kjipb"]
 [ext_resource type="PackedScene" uid="uid://476dpqsw7wdq" path="res://tiles/regular wall.tscn" id="3_vkxy4"]
-[ext_resource type="PackedScene" uid="uid://c0yhphli4irru" path="res://characters/laser cannon.tscn" id="4_6vkqh"]
+[ext_resource type="PackedScene" uid="uid://c1bs80py3wckl" path="res://characters/laser cannon.tscn" id="4_6vkqh"]
 
 [node name="game" type="Node2D"]
 
@@ -207,4 +207,4 @@ position = Vector2(575, 342)
 scale = Vector2(0.3, 0.3)
 
 [node name="laser cannon" parent="." instance=ExtResource("4_6vkqh")]
-position = Vector2(178, 253)
+position = Vector2(153, 171)
