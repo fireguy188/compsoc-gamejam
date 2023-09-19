@@ -18,6 +18,19 @@ script = ExtResource("1_x8bic")
 texture = ExtResource("1_cg3w6")
 offset = Vector2(9, 0)
 
+[node name="particles" type="CPUParticles2D" parent="."]
+position = Vector2(96, 0)
+amount = 20
+speed_scale = 64.0
+emission_shape = 3
+emission_rect_extents = Vector2(40, 30)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_min = 3.0
+scale_amount_max = 10.0
+color = Color(0.988235, 0.0156863, 0.0156863, 1)
+
 [node name="laser" type="Area2D" parent="."]
 
 [node name="laser sprite" type="Sprite2D" parent="laser"]
@@ -26,12 +39,14 @@ scale = Vector2(40, 1)
 texture = ExtResource("2_kfav1")
 
 [node name="collider" type="CollisionShape2D" parent="laser"]
+visible = false
 position = Vector2(1668, 0)
 scale = Vector2(40, 1)
 shape = SubResource("RectangleShape2D_1eo3x")
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mvsww")
+volume_db = -10.73
 pitch_scale = 1.85
 
 [connection signal="body_entered" from="laser" to="." method="_on_laser_body_entered"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy3obr0se0boc"]
+[gd_scene load_steps=7 format=3 uid="uid://cy3obr0se0boc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_62u48"]
+[ext_resource type="AudioStream" uid="uid://wh4dgjdg0rnl" path="res://audio/menu_music.mp3" id="2_norbg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi643"]
 bg_color = Color(0.137255, 0.431373, 0.862745, 1)
@@ -44,14 +45,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -409.0
-offset_top = 18.0
-offset_right = 410.0
-offset_bottom = 192.0
+offset_left = -470.5
+offset_right = 470.5
+offset_bottom = 174.0
 grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center]Infinite Dodging[/center]"
+text = "[center]Just Keep Moving[/center]"
 
 [node name="StartBtn" type="Button" parent="."]
 layout_mode = 1
@@ -68,5 +68,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_im4gy")
 text = "Start"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_norbg")
+volume_db = -12.381
 
 [connection signal="pressed" from="StartBtn" to="." method="_on_start_btn_pressed"]

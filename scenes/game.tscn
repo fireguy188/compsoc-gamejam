@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://20w7n5h3jhnv"]
+[gd_scene load_steps=8 format=3 uid="uid://20w7n5h3jhnv"]
 
 [ext_resource type="PackedScene" uid="uid://efvlo2kvxhur" path="res://characters/player.tscn" id="1_0t55d"]
 [ext_resource type="PackedScene" uid="uid://i2hkfjju75mr" path="res://tiles/corner wall.tscn" id="2_kjipb"]
 [ext_resource type="PackedScene" uid="uid://476dpqsw7wdq" path="res://tiles/regular wall.tscn" id="3_vkxy4"]
 [ext_resource type="PackedScene" uid="uid://c1bs80py3wckl" path="res://characters/laser cannon.tscn" id="4_6vkqh"]
+[ext_resource type="PackedScene" uid="uid://djmc4gj0puseu" path="res://characters/triangle.tscn" id="4_fskd4"]
+[ext_resource type="AudioStream" uid="uid://b2nggm3gsucy6" path="res://audio/game_music.mp3" id="6_ivnkk"]
+[ext_resource type="PackedScene" uid="uid://b2p5ymgfvlybo" path="res://characters/ball.tscn" id="6_kgi0h"]
 
 [node name="game" type="Node2D"]
 
@@ -206,5 +209,22 @@ rotation = 1.5708
 position = Vector2(575, 342)
 scale = Vector2(0.3, 0.3)
 
+[node name="triangle" parent="." instance=ExtResource("4_fskd4")]
+position = Vector2(259, 593)
+
+[node name="triangle2" parent="." instance=ExtResource("4_fskd4")]
+position = Vector2(945, 426)
+
 [node name="laser cannon" parent="." instance=ExtResource("4_6vkqh")]
-position = Vector2(153, 171)
+position = Vector2(155, 180)
+
+[node name="laser cannon2" parent="." instance=ExtResource("4_6vkqh")]
+position = Vector2(972, 277)
+
+[node name="ball" parent="." instance=ExtResource("6_kgi0h")]
+position = Vector2(218, 358)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ivnkk")
+volume_db = -16.508
+autoplay = true

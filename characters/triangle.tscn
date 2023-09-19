@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://djmc4gj0puseu"]
+
+[ext_resource type="Script" path="res://scripts/triangle.gd" id="1_4h6y0"]
+[ext_resource type="Texture2D" uid="uid://cagfyx43aljt4" path="res://images/triangle.svg" id="1_r7x3a"]
+[ext_resource type="AudioStream" uid="uid://b4msw2l0b1kwk" path="res://audio/triangle.mp3" id="3_h6vxk"]
+
+[node name="triangle" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_4h6y0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r7x3a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -66, 57, 46, -57, 46)
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_h6vxk")
+volume_db = -11.855
+pitch_scale = 0.05
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
