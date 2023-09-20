@@ -13,10 +13,16 @@ radius = 49.0306
 [node name="ball" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_rf8f3")
 gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_lj8tu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_cg1ch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3, 0.3)
 shape = SubResource("CircleShape2D_l0x75")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

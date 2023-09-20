@@ -14,10 +14,6 @@ monitoring = false
 monitorable = false
 script = ExtResource("1_x8bic")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cg3w6")
-offset = Vector2(9, 0)
-
 [node name="particles" type="CPUParticles2D" parent="."]
 position = Vector2(96, 0)
 amount = 20
@@ -30,6 +26,10 @@ gravity = Vector2(0, 0)
 scale_amount_min = 3.0
 scale_amount_max = 10.0
 color = Color(0.988235, 0.0156863, 0.0156863, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cg3w6")
+offset = Vector2(9, 0)
 
 [node name="laser" type="Area2D" parent="."]
 

@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccushqvnq2ct1"]
+
+[ext_resource type="Script" path="res://scripts/square.gd" id="1_aqdcn"]
+[ext_resource type="Texture2D" uid="uid://m8cvnm13wxsc" path="res://images/square.svg" id="1_mbur1"]
+
+[sub_resource type="Gradient" id="Gradient_2iix2"]
+offsets = PackedFloat32Array(0.535912, 1)
+colors = PackedColorArray(0.974862, 0.719092, 0.156389, 1, 0.928177, 0.197405, 0.148226, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eojsp"]
+size = Vector2(98, 98)
+
+[node name="square" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_aqdcn")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 85)
+scale = Vector2(1, 1)
+amount = 50
+lifetime = 0.01
+emission_shape = 3
+emission_rect_extents = Vector2(17, 30)
+direction = Vector2(20, 20)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 825.76
+initial_velocity_max = 825.76
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_2iix2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mbur1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("RectangleShape2D_eojsp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

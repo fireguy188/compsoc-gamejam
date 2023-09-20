@@ -1,29 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://efvlo2kvxhur"]
+[gd_scene load_steps=3 format=3 uid="uid://efvlo2kvxhur"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_h62cu"]
 [ext_resource type="Texture2D" uid="uid://b0syjpwc1ir27" path="res://images/happy.svg" id="2_witkp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0riyd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_witkp")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="player" type="CharacterBody2D"]
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_h62cu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-texture_repeat = 1
-scale = Vector2(1.00523, 1)
-sprite_frames = SubResource("SpriteFrames_0riyd")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_witkp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1, 0)
+scale = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(67, 100, -64, 99, -106, -24, 1, -102, 106, -22)

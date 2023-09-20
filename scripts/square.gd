@@ -1,15 +1,17 @@
-extends RigidBody2D
+extends Area2D
 
-var rng = RandomNumberGenerator.new()
+var viewport : Viewport
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	apply_impulse(Vector2(rng.randf_range(-1, 1), rng.randf_range(-1, 1)).normalized() * 500)
+	viewport = get_viewport()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	look_at(viewport.get_mouse_position())
+	rotate(PI/2)
+	position += (viewport.get_mouse_position() - position).normalized() * 5
 
 
 func _on_body_entered(body):
