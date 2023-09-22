@@ -8,7 +8,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	look_at(viewport.get_mouse_position())
 	rotate(PI/2)
 	position += (viewport.get_mouse_position() - position).normalized() * 5
