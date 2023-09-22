@@ -17,7 +17,7 @@ func _process(_delta):
 	
 	if position.y <= -50:
 		position.y = viewport.size.y
-		position.x = rng.randf_range(50, viewport.size.x-50)
+		#position.x = rng.randf_range(50, viewport.size.x-50)
 		sound.play()
 
 

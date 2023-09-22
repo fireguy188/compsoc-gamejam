@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cagfyx43aljt4" path="res://images/triangle.svg" id="1_r7x3a"]
 [ext_resource type="AudioStream" uid="uid://b4msw2l0b1kwk" path="res://audio/triangle.mp3" id="3_h6vxk"]
 
-[node name="triangle" type="Area2D"]
+[node name="triangle" type="Area2D" groups=["enemy"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4h6y0")
 

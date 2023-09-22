@@ -2,15 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/square.gd" id="1_aqdcn"]
 [ext_resource type="Texture2D" uid="uid://m8cvnm13wxsc" path="res://images/square.svg" id="1_mbur1"]
-
-[sub_resource type="Gradient" id="Gradient_2iix2"]
-offsets = PackedFloat32Array(0.535912, 1)
-colors = PackedColorArray(0.974862, 0.719092, 0.156389, 1, 0.928177, 0.197405, 0.148226, 1)
+[ext_resource type="Gradient" uid="uid://c2kuaqe6o7c87" path="res://effects/fire_colours.tres" id="2_ci2f6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eojsp"]
 size = Vector2(98, 98)
 
-[node name="square" type="Area2D"]
+[node name="square" type="Area2D" groups=["enemy"]]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_aqdcn")
 
@@ -27,7 +24,7 @@ initial_velocity_min = 825.76
 initial_velocity_max = 825.76
 scale_amount_min = 2.0
 scale_amount_max = 5.0
-color_ramp = SubResource("Gradient_2iix2")
+color_ramp = ExtResource("2_ci2f6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mbur1")
@@ -36,4 +33,5 @@ texture = ExtResource("1_mbur1")
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_eojsp")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

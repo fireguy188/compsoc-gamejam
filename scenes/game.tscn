@@ -204,10 +204,6 @@ rotation = 1.5708
 position = Vector2(1056, 632)
 rotation = 1.5708
 
-[node name="player" parent="." instance=ExtResource("1_0t55d")]
-position = Vector2(751, 590)
-scale = Vector2(0.3, 0.3)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ivnkk")
 volume_db = -16.508
@@ -225,3 +221,7 @@ grow_horizontal = 2
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "[center]WELCOME[/center]"
+
+[node name="player" parent="." instance=ExtResource("1_0t55d")]
+position = Vector2(751, 590)
+scale = Vector2(0.3, 0.3)

@@ -4,6 +4,9 @@ var laser : Area2D
 var laserCollider : CollisionShape2D
 var particles : CPUParticles2D
 var sound : AudioStreamPlayer
+var laser_sprite : Sprite2D
+var laser_on_img = preload("res://images/laser.svg")
+var laser_off_img = preload("res://images/laser_off.png")
 var last_stage_time : int
 enum {LASER_OFF, LASER_STARTING, LASER_ON}
 var current_stage = LASER_OFF
@@ -14,6 +17,7 @@ func _ready():
 	laserCollider = laser.get_node("collider")
 	particles = get_node("particles")
 	sound = get_node("sound")
+	laser_sprite = get_node("laser/laser sprite")
 	laser.hide()
 	particles.emitting = false
 	laserCollider.disabled = true
@@ -29,10 +33,12 @@ func _process(_delta):
 	
 	if current_stage == LASER_OFF and current_time - last_stage_time >= 5000:
 		current_stage = LASER_STARTING
+		laser.show()
+		laser_sprite.texture = laser_off_img
 		last_stage_time = current_time
 	elif current_stage == LASER_STARTING and current_time - last_stage_time >= 3000:
 		current_stage = LASER_ON
-		laser.show()
+		laser_sprite.texture = laser_on_img
 		laserCollider.disabled = false
 		particles.emitting = true
 		sound.play()

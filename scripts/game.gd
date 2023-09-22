@@ -48,10 +48,10 @@ func startGame():
 		timer.one_shot = false
 
 func updateRound():
-	var enemies = ["laser", "ball", "triangle"]
+	var enemies = ["laser", "ball", "triangle", "square"]
 	roundNum += 1
 	
-	addEnemy(enemies[rng.randi_range(0, 2)])
+	addEnemy(enemies[rng.randi_range(0, 3)])
 	
 func addEnemy(enemyName: String):
 	if enemyName == "laser":
@@ -70,8 +70,22 @@ func addEnemy(enemyName: String):
 	var y: float
 	var breaking = false
 	while !breaking:
-		x = rng.randf_range(20, viewportRect.size.x-20)
-		y = rng.randf_range(20, viewportRect.size.y-20)
+		if enemyName == "triangle":
+			x = rng.randf_range(20, viewportRect.size.x-20)
+			y = viewportRect.size.y
+		else:
+			if rng.randi_range(0, 1) == 0:
+				if rng.randi_range(0, 1) == 0:
+					x = 20
+				else:
+					x = -20
+				y = rng.randf_range(20, viewportRect.size.y-20)
+			else:
+				x = rng.randf_range(20, viewportRect.size.x-20)
+				if rng.randi_range(0, 1) == 0:
+					y = 20
+				else:
+					y = -20
 		
 		breaking = true
 		if (player.position.x - x)**2 + (player.position.y - y)**2 <= 30**2:
