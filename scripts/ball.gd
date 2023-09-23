@@ -4,6 +4,7 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(position)
 	apply_impulse(Vector2(rng.randf_range(-1, 1), rng.randf_range(-1, 1)).normalized() * 500)
 
 

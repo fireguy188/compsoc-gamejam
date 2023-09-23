@@ -1,13 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://20w7n5h3jhnv"]
+[gd_scene load_steps=7 format=3 uid="uid://20w7n5h3jhnv"]
 
 [ext_resource type="PackedScene" uid="uid://efvlo2kvxhur" path="res://characters/player.tscn" id="1_0t55d"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ngc57"]
+[ext_resource type="Texture2D" uid="uid://djihu3p3ldtcf" path="res://images/grid.png" id="2_8iejx"]
 [ext_resource type="PackedScene" uid="uid://i2hkfjju75mr" path="res://tiles/corner wall.tscn" id="2_kjipb"]
 [ext_resource type="PackedScene" uid="uid://476dpqsw7wdq" path="res://tiles/regular wall.tscn" id="3_vkxy4"]
 [ext_resource type="AudioStream" uid="uid://b2nggm3gsucy6" path="res://audio/game_music.mp3" id="6_ivnkk"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_ngc57")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(749.858, 451.413)
+scale = Vector2(1.04331, 1.11532)
+texture = ExtResource("2_8iejx")
 
 [node name="Border" type="CanvasGroup" parent="."]
 position = Vector2(-56, -64)
@@ -209,7 +215,12 @@ stream = ExtResource("6_ivnkk")
 volume_db = -16.508
 autoplay = true
 
+[node name="player" parent="." instance=ExtResource("1_0t55d")]
+position = Vector2(751, 590)
+scale = Vector2(0.3, 0.3)
+
 [node name="infoTxt" type="RichTextLabel" parent="."]
+z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -218,10 +229,7 @@ offset_top = 70.0
 offset_right = 1243.0
 offset_bottom = 389.0
 grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 text = "[center]WELCOME[/center]"
-
-[node name="player" parent="." instance=ExtResource("1_0t55d")]
-position = Vector2(751, 590)
-scale = Vector2(0.3, 0.3)

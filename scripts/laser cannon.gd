@@ -3,7 +3,7 @@ extends Area2D
 var laser : Area2D
 var laserCollider : CollisionShape2D
 var particles : CPUParticles2D
-var sound : AudioStreamPlayer
+var sound : AudioStreamPlayer2D
 var laser_sprite : Sprite2D
 var laser_on_img = preload("res://images/laser.svg")
 var laser_off_img = preload("res://images/laser_off.png")
@@ -25,7 +25,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(_delta):
 	if current_stage in [LASER_ON, LASER_STARTING]:
 		rotate(2*PI/360)
 		
