@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0lhm1rarfn1k"]
+[gd_scene load_steps=4 format=3 uid="uid://b0lhm1rarfn1k"]
 
 [ext_resource type="Gradient" uid="uid://c2kuaqe6o7c87" path="res://effects/fire_colours.tres" id="1_nyvw0"]
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="2_mh5ww"]
+[ext_resource type="AudioStream" uid="uid://cen5wytlqeeiv" path="res://audio/boom.mp3" id="3_hp22m"]
 
 [node name="explosion" type="CPUParticles2D"]
 emitting = false
@@ -22,5 +23,8 @@ script = ExtResource("2_mh5ww")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hp22m")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

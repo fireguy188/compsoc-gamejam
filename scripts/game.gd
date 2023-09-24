@@ -6,6 +6,7 @@ var lasers = []
 var rng = RandomNumberGenerator.new()
 var viewportRect: Rect2
 var player: CharacterBody2D
+var pause_menu: Control
 var timer = Timer.new()
 
 var laser = preload("res://characters/laser cannon.tscn")
@@ -18,6 +19,8 @@ func _ready():
 	infoTxt = get_node("infoTxt")
 	viewportRect = get_viewport_rect()
 	player = get_node("player")
+	pause_menu = get_node("CanvasLayer/pause_menu")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 	
 	add_child(timer)
 	timer.one_shot = true

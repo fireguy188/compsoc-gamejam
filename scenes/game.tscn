@@ -1,18 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://20w7n5h3jhnv"]
+[gd_scene load_steps=9 format=3 uid="uid://20w7n5h3jhnv"]
 
 [ext_resource type="PackedScene" uid="uid://efvlo2kvxhur" path="res://characters/player.tscn" id="1_0t55d"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_ngc57"]
 [ext_resource type="Texture2D" uid="uid://djihu3p3ldtcf" path="res://images/grid.png" id="2_8iejx"]
+[ext_resource type="PackedScene" uid="uid://dlvfynf52h811" path="res://scenes/pause_menu.tscn" id="2_gvccc"]
 [ext_resource type="PackedScene" uid="uid://i2hkfjju75mr" path="res://tiles/corner wall.tscn" id="2_kjipb"]
 [ext_resource type="PackedScene" uid="uid://476dpqsw7wdq" path="res://tiles/regular wall.tscn" id="3_vkxy4"]
 [ext_resource type="AudioStream" uid="uid://b2nggm3gsucy6" path="res://audio/game_music.mp3" id="6_ivnkk"]
+[ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="8_byuj6"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_ngc57")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(749.858, 451.413)
-scale = Vector2(1.04331, 1.11532)
+scale = Vector2(2.35, 2.51)
 texture = ExtResource("2_8iejx")
 
 [node name="Border" type="CanvasGroup" parent="."]
@@ -230,6 +232,14 @@ offset_right = 1243.0
 offset_bottom = 389.0
 grow_horizontal = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 60
+theme_override_fonts/normal_font = ExtResource("8_byuj6")
+theme_override_font_sizes/normal_font_size = 70
 bbcode_enabled = true
 text = "[center]WELCOME[/center]"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="pause_menu" parent="CanvasLayer" instance=ExtResource("2_gvccc")]
+process_mode = 3
+visible = false

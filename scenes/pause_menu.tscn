@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlvfynf52h811"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_dab2l"]
+[ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="1_r1myu"]
+[ext_resource type="Theme" uid="uid://cabeo2527mijv" path="res://themes/button_theme.tres" id="1_xj530"]
+
+[node name="pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dab2l")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.541176, 0.541176, 0.541176, 0.682353)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_r1myu")
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="continueBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 90)
+layout_mode = 2
+theme = ExtResource("1_xj530")
+text = "Continue"
+
+[node name="quitBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("1_xj530")
+text = "Quit"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/continueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/quitBtn" to="." method="_on_quit_btn_pressed"]

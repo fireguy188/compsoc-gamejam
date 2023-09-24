@@ -1,0 +1,133 @@
+[gd_scene load_steps=9 format=3 uid="uid://1tin2jb36keo"]
+
+[ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="1_3w222"]
+[ext_resource type="Script" path="res://scripts/help_menu.gd" id="1_my64a"]
+[ext_resource type="Texture2D" uid="uid://bustyuttriago" path="res://images/laser cannon.svg" id="2_du3xo"]
+[ext_resource type="Texture2D" uid="uid://djihu3p3ldtcf" path="res://images/grid.png" id="2_rnjx1"]
+[ext_resource type="Texture2D" uid="uid://bgeadgd62ndjh" path="res://images/ball.svg" id="3_ayxnm"]
+[ext_resource type="Texture2D" uid="uid://cagfyx43aljt4" path="res://images/triangle.svg" id="4_x3jnl"]
+[ext_resource type="Texture2D" uid="uid://m8cvnm13wxsc" path="res://images/square.svg" id="5_ailnu"]
+[ext_resource type="Theme" uid="uid://cabeo2527mijv" path="res://themes/button_theme.tres" id="6_5lrqu"]
+
+[node name="help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_my64a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(749.858, 451.413)
+scale = Vector2(2.35, 2.51)
+texture = ExtResource("2_rnjx1")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 24.0
+offset_right = 78.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.105882, 0.376471, 0.772549, 1)
+theme_override_fonts/font = ExtResource("1_3w222")
+theme_override_font_sizes/font_size = 100
+text = "Help"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -728.0
+offset_top = -303.0
+offset_right = 728.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 1)
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_3w222")
+theme_override_font_sizes/font_size = 40
+text = "Survive as long as you can while enemies spawn in infinitely, with your demise being their only goal."
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_3w222")
+theme_override_font_sizes/font_size = 40
+text = "This is a laser. While charging up, it emits a grey beam indicating where it will fire. Don't get in the way of its deadly red beam."
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_3w222")
+theme_override_font_sizes/font_size = 40
+text = "This is a triangle. This enemy soars across the screen vertically and is incredibly sharp. I wouldn't recommend trying to get a closer look."
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_3w222")
+theme_override_font_sizes/font_size = 40
+text = "This is a ball. This enemy bounces across the screen and can even bounce off of other balls. It may seem harmless but just see what happens if you try to touch it."
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_3w222")
+theme_override_font_sizes/font_size = 40
+text = "This is a square. This enemy is the most useful of them all, it flies directly towards you at all times. However, this enemy doesn't get along well with others and on collision with one, they both blow up."
+autowrap_mode = 2
+
+[node name="LaserCannon" type="Sprite2D" parent="."]
+position = Vector2(1387, 275)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_du3xo")
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(1387, 567)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ayxnm")
+
+[node name="Triangle" type="Sprite2D" parent="."]
+position = Vector2(1385, 423)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_x3jnl")
+
+[node name="Square" type="Sprite2D" parent="."]
+position = Vector2(1386, 716)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_ailnu")
+
+[node name="mainMenuBtn" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -113.0
+offset_right = 125.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_5lrqu")
+text = "Main Menu"
+
+[connection signal="pressed" from="mainMenuBtn" to="." method="_on_main_menu_btn_pressed"]

@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cabeo2527mijv"]
+
+[ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="1_8thqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi643"]
+bg_color = Color(0.137255, 0.431373, 0.862745, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlxyc"]
+bg_color = Color(0.352941, 0.596078, 0.972549, 1)
+border_width_bottom = 10
+border_color = Color(0.180392, 0.47451, 0.917647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2br0n"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font_size = 50
+Button/fonts/font = ExtResource("1_8thqc")
+Button/styles/hover = SubResource("StyleBoxFlat_gi643")
+Button/styles/normal = SubResource("StyleBoxFlat_wlxyc")
+Button/styles/pressed = SubResource("StyleBoxFlat_2br0n")
