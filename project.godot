@@ -19,6 +19,7 @@ config/icon="res://images/icon.svg"
 
 Globals="*res://scripts/globals.gd"
 HelpMusic="*res://scripts/help_music.gd"
+PlayerRequester="*res://scripts/player_requester.gd"
 
 [display]
 

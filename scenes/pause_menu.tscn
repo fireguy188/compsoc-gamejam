@@ -56,5 +56,12 @@ layout_mode = 2
 theme = ExtResource("1_xj530")
 text = "Quit"
 
+[node name="menuBtn" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("1_xj530")
+text = "Main Menu"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/continueBtn" to="." method="_on_continue_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/quitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/menuBtn" to="." method="_on_menu_btn_pressed"]

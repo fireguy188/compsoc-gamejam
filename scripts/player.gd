@@ -24,5 +24,10 @@ func _physics_process(_delta):
 
 func take_damage():
 	# YOU DIED
+	if Globals.username != "":
+		PlayerRequester.send_score(get_parent().roundNum)
+
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	
+	

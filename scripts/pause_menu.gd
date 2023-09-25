@@ -38,3 +38,8 @@ func _on_continue_btn_pressed():
 
 func _on_quit_btn_pressed():
 	get_tree().quit()
+
+
+func _on_menu_btn_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().paused = false

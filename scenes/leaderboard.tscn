@@ -1,0 +1,337 @@
+[gd_scene load_steps=7 format=3 uid="uid://cevvk32281d2f"]
+
+[ext_resource type="Texture2D" uid="uid://djihu3p3ldtcf" path="res://images/grid.png" id="1_ke7gp"]
+[ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="2_3w4id"]
+[ext_resource type="Theme" uid="uid://cabeo2527mijv" path="res://themes/button_theme.tres" id="3_s3bu1"]
+[ext_resource type="Script" path="res://scripts/LeaderboardHTTP.gd" id="4_3e6x1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt7ye"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.415686, 0.415686, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upnoe"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.415686, 0.415686, 0.415686, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 5.0
+expand_margin_right = 15.0
+
+[node name="leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(749.858, 451.413)
+scale = Vector2(2.35, 2.51)
+texture = ExtResource("1_ke7gp")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 24.0
+offset_right = 78.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.105882, 0.376471, 0.772549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 100
+text = "Leaderboard"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -712.5
+offset_top = -300.0
+offset_right = 712.5
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+
+[node name="normal" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="SubTitle" type="Label" parent="HBoxContainer/normal"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.105882, 0.376471, 0.772549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt7ye")
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/normal/SubTitle"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="ScorePanel" type="Panel" parent="HBoxContainer/normal"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_upnoe")
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/normal/ScorePanel"]
+layout_mode = 1
+offset_right = 400.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Name"
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer/normal/ScorePanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Score"
+horizontal_alignment = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="HBoxContainer/normal/ScorePanel"]
+offset_right = 300.0
+offset_bottom = 75.0
+theme_override_constants/separation = 75
+
+[node name="Control" type="Control" parent="HBoxContainer/normal/ScorePanel/PlayerList"]
+layout_mode = 2
+
+[node name="double" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="SubTitle" type="Label" parent="HBoxContainer/double"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.105882, 0.376471, 0.772549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt7ye")
+text = "Double"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/double/SubTitle"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="ScorePanel" type="Panel" parent="HBoxContainer/double"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_upnoe")
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/double/ScorePanel"]
+layout_mode = 1
+offset_right = 400.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Name"
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer/double/ScorePanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Score"
+horizontal_alignment = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="HBoxContainer/double/ScorePanel"]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 75.0
+theme_override_constants/separation = 75
+
+[node name="Control" type="Control" parent="HBoxContainer/double/ScorePanel/PlayerList"]
+layout_mode = 2
+
+[node name="hell" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="SubTitle" type="Label" parent="HBoxContainer/hell"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.105882, 0.376471, 0.772549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt7ye")
+text = "Hell"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/hell/SubTitle"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="ScorePanel" type="Panel" parent="HBoxContainer/hell"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_upnoe")
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/hell/ScorePanel"]
+layout_mode = 1
+offset_right = 400.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Name"
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer/hell/ScorePanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Score"
+horizontal_alignment = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="HBoxContainer/hell/ScorePanel"]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 75.0
+theme_override_constants/separation = 75
+
+[node name="Control" type="Control" parent="HBoxContainer/hell/ScorePanel/PlayerList"]
+layout_mode = 2
+
+[node name="laser" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="SubTitle" type="Label" parent="HBoxContainer/laser"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.105882, 0.376471, 0.772549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_xt7ye")
+text = "Laser"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/laser/SubTitle"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="ScorePanel" type="Panel" parent="HBoxContainer/laser"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_upnoe")
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/laser/ScorePanel"]
+layout_mode = 1
+offset_right = 400.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Name"
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer/laser/ScorePanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.352941, 0.596078, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_3w4id")
+theme_override_font_sizes/font_size = 60
+text = "Score"
+horizontal_alignment = 2
+
+[node name="PlayerList" type="VBoxContainer" parent="HBoxContainer/laser/ScorePanel"]
+layout_mode = 2
+offset_right = 300.0
+offset_bottom = 75.0
+theme_override_constants/separation = 75
+
+[node name="Control" type="Control" parent="HBoxContainer/laser/ScorePanel/PlayerList"]
+layout_mode = 2
+
+[node name="mainMenuBtn" type="Button" parent="."]
+custom_minimum_size = Vector2(250, 90)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -109.0
+offset_right = 125.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_s3bu1")
+text = "Main Menu"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+script = ExtResource("4_3e6x1")
+
+[connection signal="pressed" from="mainMenuBtn" to="HTTPRequest" method="_on_main_menu_btn_pressed"]

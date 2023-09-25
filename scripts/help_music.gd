@@ -14,6 +14,7 @@ func play():
 
 func stop():
 	music.stop()
+	remove_child(music)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
