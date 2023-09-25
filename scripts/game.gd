@@ -44,7 +44,7 @@ func startGame():
 				  ["[center]This is a triangle. Please mind its sharpness.[/center]", "triangle"],
 				  ["[center]Finally this is a square. Just don't stop moving![/center]", "square"]]
 	
-	if roundNum < 3 and Globals.mode == "normal":
+	if roundNum < 4 and Globals.mode == "normal":
 		infoTxt.text = intros[roundNum][0]
 		addEnemy(intros[roundNum][1])
 		

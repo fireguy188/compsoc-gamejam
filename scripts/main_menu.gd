@@ -7,6 +7,8 @@ var music : AudioStreamPlayer
 func _ready():
 	music = get_node("music")
 	music.play()
+	
+	get_node("VBoxContainer/username").text = Globals.username
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

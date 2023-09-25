@@ -127,6 +127,7 @@ text = "Score"
 horizontal_alignment = 2
 
 [node name="PlayerList" type="VBoxContainer" parent="HBoxContainer/normal/ScorePanel"]
+layout_mode = 0
 offset_right = 300.0
 offset_bottom = 75.0
 theme_override_constants/separation = 75
