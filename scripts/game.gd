@@ -7,6 +7,7 @@ var rng = RandomNumberGenerator.new()
 var viewportRect: Rect2
 var player: CharacterBody2D
 var pause_menu: Control
+var mode: String
 var timer = Timer.new()
 
 var laser = preload("res://characters/laser cannon.tscn")
@@ -38,24 +39,32 @@ func startGame():
 				  ["[center]This is a triangle. Please mind its sharpness.[/center]", "triangle"],
 				  ["[center]Finally this is a square. Just don't stop moving![/center]", "square"]]
 	
-	infoTxt.text = intros[roundNum][0]
-	addEnemy(intros[roundNum][1])
-	
-	if roundNum < 3:
+	if roundNum < 3 and Globals.mode == "normal":
+		infoTxt.text = intros[roundNum][0]
+		addEnemy(intros[roundNum][1])
+		
 		roundNum += 1
 		timer.start(5)
 	else:
 		timer.disconnect("timeout", startGame)
 		timer.connect("timeout", updateRound)
-		timer.start(5)
+		if Globals.mode == "normal" or Globals.mode == "laser":
+			timer.start(5)
+		elif Globals.mode == "double":
+			timer.start(2.5)
+		elif Globals.mode == "hell":
+			timer.start(1.25)
 		timer.one_shot = false
 
 func updateRound():
-	var enemies = ["laser", "ball", "triangle", "square"]
 	roundNum += 1
 	infoTxt.text = "[center]Round: " + str(roundNum) + "[/center]"
 	
-	addEnemy(enemies[rng.randi_range(0, 3)])
+	if Globals.mode == "laser":
+		addLaser()
+	else:
+		var enemies = ["laser", "ball", "triangle", "square"]
+		addEnemy(enemies[rng.randi_range(0, 3)])
 	
 func addEnemy(enemyName: String):
 	if enemyName == "laser":

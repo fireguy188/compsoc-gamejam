@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy3obr0se0boc"]
+[gd_scene load_steps=10 format=3 uid="uid://cy3obr0se0boc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_62u48"]
 [ext_resource type="Texture2D" uid="uid://djihu3p3ldtcf" path="res://images/grid.png" id="2_lfdvm"]
 [ext_resource type="AudioStream" uid="uid://wh4dgjdg0rnl" path="res://audio/menu_music.mp3" id="2_norbg"]
 [ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="2_op8s4"]
 [ext_resource type="Theme" uid="uid://cabeo2527mijv" path="res://themes/button_theme.tres" id="3_berlj"]
+[ext_resource type="Texture2D" uid="uid://2ewajecfm1jo" path="res://images/normal.png" id="5_s3ove"]
+[ext_resource type="Texture2D" uid="uid://dqajjo1vvt5yt" path="res://images/double.png" id="6_p1xil"]
+[ext_resource type="Texture2D" uid="uid://ci7ltyjfojih5" path="res://images/hell.png" id="7_ep3cg"]
+[ext_resource type="Texture2D" uid="uid://sdh7ngqikr1q" path="res://images/laser.png" id="8_dcqu8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -43,22 +47,75 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -31.5
-offset_right = 53.0
-offset_bottom = 31.5
+offset_left = -175.0
+offset_top = -105.0
+offset_right = 175.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="StartBtn" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(350, 90)
+[node name="Control" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 390)
 layout_mode = 2
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="normalBtn" type="Button" parent="VBoxContainer/Control"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 87.0
+grow_vertical = 2
 theme = ExtResource("3_berlj")
-text = "Start"
+text = "▶"
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Control"]
+position = Vector2(244, 48)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_s3ove")
+
+[node name="doubleBtn" type="Button" parent="VBoxContainer/Control"]
+offset_left = 13.0
+offset_top = 105.0
+offset_right = 90.0
+offset_bottom = 182.0
+theme = ExtResource("3_berlj")
+text = "▶"
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/Control"]
+position = Vector2(244, 143)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_p1xil")
+
+[node name="hellBtn" type="Button" parent="VBoxContainer/Control"]
+offset_left = 13.0
+offset_top = 200.0
+offset_right = 90.0
+offset_bottom = 277.0
+theme = ExtResource("3_berlj")
+text = "▶"
+
+[node name="Sprite2D3" type="Sprite2D" parent="VBoxContainer/Control"]
+position = Vector2(244, 238)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_ep3cg")
+
+[node name="laserBtn" type="Button" parent="VBoxContainer/Control"]
+offset_left = 13.0
+offset_top = 295.0
+offset_right = 90.0
+offset_bottom = 372.0
+theme = ExtResource("3_berlj")
+text = "▶"
+
+[node name="Sprite2D4" type="Sprite2D" parent="VBoxContainer/Control"]
+position = Vector2(244, 333)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_dcqu8")
 
 [node name="HelpBtn" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(350, 90)
+custom_minimum_size = Vector2(400, 90)
 layout_mode = 2
 theme = ExtResource("3_berlj")
 text = "Help"
@@ -67,5 +124,8 @@ text = "Help"
 stream = ExtResource("2_norbg")
 volume_db = -12.381
 
-[connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/normalBtn" to="." method="_on_normal_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/doubleBtn" to="." method="_on_double_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/hellBtn" to="." method="_on_hell_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control/laserBtn" to="." method="_on_laser_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/HelpBtn" to="." method="_on_help_btn_pressed"]

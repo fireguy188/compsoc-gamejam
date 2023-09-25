@@ -13,3 +13,12 @@ func _process(_delta):
 
 func _on_main_menu_btn_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	HelpMusic.stop()
+
+
+func _on_next_btn_pressed():
+	get_tree().change_scene_to_file("res://scenes/help_menu2.tscn")
+
+
+func _on_prev_btn_pressed():
+	get_tree().change_scene_to_file("res://scenes/help_menu.tscn")

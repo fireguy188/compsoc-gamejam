@@ -17,7 +17,6 @@ func _physics_process(_delta):
 
 
 func _on_body_entered(body):
-	print(body)
 	if body.name == "player":
 		body.take_damage()
 	elif body.is_in_group("enemy"):

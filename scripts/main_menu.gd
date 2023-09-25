@@ -13,11 +13,28 @@ func _ready():
 func _process(_delta):
 	pass
 
-
-
-func _on_start_btn_pressed():
+func _on_normal_btn_pressed():
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
+	Globals.mode = "normal"
 
 func _on_help_btn_pressed():
 	get_tree().change_scene_to_file("res://scenes/help_menu.tscn")
+	HelpMusic.play()
+
+
+
+
+
+func _on_double_btn_pressed():
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Globals.mode = "double"
+
+
+func _on_hell_btn_pressed():
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Globals.mode = "hell"
+
+
+func _on_laser_btn_pressed():
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	Globals.mode = "laser"
