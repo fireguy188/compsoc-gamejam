@@ -8,6 +8,7 @@ var viewportRect: Rect2
 var player: CharacterBody2D
 var pause_menu: Control
 var mode: String
+var music: AudioStreamPlayer
 var timer = Timer.new()
 
 var laser = preload("res://characters/laser cannon.tscn")
@@ -21,6 +22,10 @@ func _ready():
 	viewportRect = get_viewport_rect()
 	player = get_node("player")
 	pause_menu = get_node("CanvasLayer/pause_menu")
+	music = get_node("music")
+	
+	music.stream = load(Globals.music)
+	music.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 	
 	add_child(timer)

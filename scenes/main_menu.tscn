@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy3obr0se0boc"]
+[gd_scene load_steps=15 format=3 uid="uid://cy3obr0se0boc"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_62u48"]
 [ext_resource type="Texture2D" uid="uid://djihu3p3ldtcf" path="res://images/grid.png" id="2_lfdvm"]
 [ext_resource type="AudioStream" uid="uid://wh4dgjdg0rnl" path="res://audio/menu_music.mp3" id="2_norbg"]
 [ext_resource type="FontFile" uid="uid://m4xfols7k78r" path="res://fonts/Glue Gun.otf" id="2_op8s4"]
 [ext_resource type="Theme" uid="uid://cabeo2527mijv" path="res://themes/button_theme.tres" id="3_berlj"]
+[ext_resource type="PackedScene" uid="uid://djmc4gj0puseu" path="res://characters/triangle.tscn" id="3_hn6p7"]
+[ext_resource type="PackedScene" uid="uid://i2hkfjju75mr" path="res://tiles/corner wall.tscn" id="3_jtlky"]
+[ext_resource type="PackedScene" uid="uid://b2p5ymgfvlybo" path="res://characters/ball.tscn" id="4_vycgq"]
+[ext_resource type="PackedScene" uid="uid://476dpqsw7wdq" path="res://tiles/regular wall.tscn" id="4_yl4lh"]
+[ext_resource type="PackedScene" uid="uid://c1bs80py3wckl" path="res://characters/laser cannon.tscn" id="5_6ebd3"]
 [ext_resource type="Texture2D" uid="uid://2ewajecfm1jo" path="res://images/normal.png" id="5_s3ove"]
 [ext_resource type="Texture2D" uid="uid://dqajjo1vvt5yt" path="res://images/double.png" id="6_p1xil"]
 [ext_resource type="Texture2D" uid="uid://ci7ltyjfojih5" path="res://images/hell.png" id="7_ep3cg"]
@@ -23,6 +28,210 @@ script = ExtResource("1_62u48")
 position = Vector2(749.858, 451.413)
 scale = Vector2(2.35, 2.51)
 texture = ExtResource("2_lfdvm")
+
+[node name="Border" type="CanvasGroup" parent="."]
+position = Vector2(-56, -64)
+scale = Vector2(1.4, 1.61)
+
+[node name="corner wall" parent="Border" instance=ExtResource("3_jtlky")]
+position = Vector2(32, 608)
+
+[node name="corner wall2" parent="Border" instance=ExtResource("3_jtlky")]
+position = Vector2(32, 32)
+rotation = 1.5708
+
+[node name="corner wall3" parent="Border" instance=ExtResource("3_jtlky")]
+position = Vector2(1120, 32)
+rotation = 3.14159
+
+[node name="corner wall4" parent="Border" instance=ExtResource("3_jtlky")]
+position = Vector2(1120, 608)
+rotation = -1.5708
+
+[node name="regular wall" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 96)
+
+[node name="regular wall2" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 160)
+
+[node name="regular wall3" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 224)
+
+[node name="regular wall4" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 288)
+
+[node name="regular wall5" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 352)
+
+[node name="regular wall6" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 416)
+
+[node name="regular wall7" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 480)
+
+[node name="regular wall8" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(32, 544)
+
+[node name="regular wall9" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 96)
+
+[node name="regular wall10" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 160)
+
+[node name="regular wall11" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 224)
+
+[node name="regular wall12" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 288)
+
+[node name="regular wall13" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 352)
+
+[node name="regular wall14" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 416)
+
+[node name="regular wall15" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 480)
+
+[node name="regular wall16" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1144, 544)
+
+[node name="regular wall17" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(96, 32)
+rotation = 1.5708
+
+[node name="regular wall18" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(160, 32)
+rotation = 1.5708
+
+[node name="regular wall19" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(224, 32)
+rotation = 1.5708
+
+[node name="regular wall20" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(288, 32)
+rotation = 1.5708
+
+[node name="regular wall21" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(352, 32)
+rotation = 1.5708
+
+[node name="regular wall22" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(416, 32)
+rotation = 1.5708
+
+[node name="regular wall23" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(480, 32)
+rotation = 1.5708
+
+[node name="regular wall24" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(544, 32)
+rotation = 1.5708
+
+[node name="regular wall25" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(608, 32)
+rotation = 1.5708
+
+[node name="regular wall26" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(672, 32)
+rotation = 1.5708
+
+[node name="regular wall27" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(736, 32)
+rotation = 1.5708
+
+[node name="regular wall28" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(800, 32)
+rotation = 1.5708
+
+[node name="regular wall29" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(864, 32)
+rotation = 1.5708
+
+[node name="regular wall30" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(928, 32)
+rotation = 1.5708
+
+[node name="regular wall31" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(992, 32)
+rotation = 1.5708
+
+[node name="regular wall32" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1056, 32)
+rotation = 1.5708
+
+[node name="regular wall33" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(96, 632)
+rotation = 1.5708
+
+[node name="regular wall34" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(160, 632)
+rotation = 1.5708
+
+[node name="regular wall35" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(224, 632)
+rotation = 1.5708
+
+[node name="regular wall36" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(288, 632)
+rotation = 1.5708
+
+[node name="regular wall37" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(352, 632)
+rotation = 1.5708
+
+[node name="regular wall38" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(416, 632)
+rotation = 1.5708
+
+[node name="regular wall39" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(480, 632)
+rotation = 1.5708
+
+[node name="regular wall40" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(544, 632)
+rotation = 1.5708
+
+[node name="regular wall41" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(608, 632)
+rotation = 1.5708
+
+[node name="regular wall42" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(672, 632)
+rotation = 1.5708
+
+[node name="regular wall43" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(736, 632)
+rotation = 1.5708
+
+[node name="regular wall44" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(800, 632)
+rotation = 1.5708
+
+[node name="regular wall45" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(864, 632)
+rotation = 1.5708
+
+[node name="regular wall46" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(928, 632)
+rotation = 1.5708
+
+[node name="regular wall47" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(992, 632)
+rotation = 1.5708
+
+[node name="regular wall48" parent="Border" instance=ExtResource("4_yl4lh")]
+position = Vector2(1056, 632)
+rotation = 1.5708
+
+[node name="triangle" parent="." instance=ExtResource("3_hn6p7")]
+position = Vector2(232, 633)
+
+[node name="ball" parent="." instance=ExtResource("4_vycgq")]
+position = Vector2(1244, 619)
+
+[node name="laser cannon" parent="." instance=ExtResource("5_6ebd3")]
+position = Vector2(1250, 180)
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -47,10 +256,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -105.0
-offset_right = 175.0
-offset_bottom = 105.0
+offset_left = -200.0
+offset_top = -241.0
+offset_right = 200.0
+offset_bottom = 389.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -76,6 +285,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_s3ove")
 
 [node name="doubleBtn" type="Button" parent="VBoxContainer/Control"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 105.0
 offset_right = 90.0
@@ -89,6 +299,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_p1xil")
 
 [node name="hellBtn" type="Button" parent="VBoxContainer/Control"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 200.0
 offset_right = 90.0
@@ -102,6 +313,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("7_ep3cg")
 
 [node name="laserBtn" type="Button" parent="VBoxContainer/Control"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 295.0
 offset_right = 90.0
@@ -120,12 +332,23 @@ layout_mode = 2
 theme = ExtResource("3_berlj")
 text = "Help"
 
+[node name="LeaderboardBtn" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 90)
+layout_mode = 2
+theme = ExtResource("3_berlj")
+text = "Leaderboard"
+
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_norbg")
 volume_db = -12.381
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(100000, 2190)
+current = true
 
 [connection signal="pressed" from="VBoxContainer/Control/normalBtn" to="." method="_on_normal_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control/doubleBtn" to="." method="_on_double_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control/hellBtn" to="." method="_on_hell_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/Control/laserBtn" to="." method="_on_laser_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/HelpBtn" to="." method="_on_help_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/LeaderboardBtn" to="." method="_on_leaderboard_btn_pressed"]

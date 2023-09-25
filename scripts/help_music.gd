@@ -6,6 +6,7 @@ var stream = preload("res://audio/help.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	music.stream = stream
+	music.volume_db = -12.381
 	
 func play():
 	add_child(music)
